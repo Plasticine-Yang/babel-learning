@@ -1,1 +1,1 @@
-export { addLocation } from './add-location'
+export { consoleCallLocationPlugin } from './plugin'
