@@ -3,7 +3,7 @@ import dedent from 'dedent'
 
 import { BabelPluginConsoleLocationOptions, babelPluginConsoleLocation } from '@/plugin'
 
-describe('consoleCallLocationPlugin', () => {
+describe('babelPluginConsoleLocation', () => {
   let sourceCode: string
 
   beforeEach(() => {
