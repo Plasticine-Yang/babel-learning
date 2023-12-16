@@ -58,6 +58,7 @@ export function babelPluginConsoleLocation(babel: Babel): BabelNamespace.PluginO
   }
 
   return {
+    name: '@babel-learning/babel-plugin-console-location',
     visitor: {
       CallExpression(path, { opts }) {
         const options: BabelPluginConsoleLocationOptions = opts || {}
