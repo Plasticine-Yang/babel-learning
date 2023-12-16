@@ -3,7 +3,7 @@ import { TARGET_CONSOLE_METHODS } from './constants'
 
 type Babel = typeof BabelNamespace
 
-export interface ConsoleCallLocationPluginOptions {
+export interface BabelPluginConsoleLocationOptions {
   /**
    * 是否换行插入 console 代码位置
    *
@@ -12,7 +12,7 @@ export interface ConsoleCallLocationPluginOptions {
   breakLine?: boolean
 }
 
-export function consoleCallLocationPlugin(babel: Babel): BabelNamespace.PluginObj {
+export function babelPluginConsoleLocation(babel: Babel): BabelNamespace.PluginObj {
   const { types: t, template } = babel
 
   /** 通过 ast 对应的代码来判断是否为 console 调用 */
@@ -60,7 +60,7 @@ export function consoleCallLocationPlugin(babel: Babel): BabelNamespace.PluginOb
   return {
     visitor: {
       CallExpression(path, { opts }) {
-        const options: ConsoleCallLocationPluginOptions = opts || {}
+        const options: BabelPluginConsoleLocationOptions = opts || {}
         const { breakLine } = options
 
         if (isConsoleCallExpression(path.get('callee').toString())) {

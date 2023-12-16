@@ -1,7 +1,7 @@
 import { transformAsync } from '@babel/core'
 import dedent from 'dedent'
 
-import { ConsoleCallLocationPluginOptions, consoleCallLocationPlugin } from '@/plugin'
+import { BabelPluginConsoleLocationOptions, babelPluginConsoleLocation } from '@/plugin'
 
 describe('consoleCallLocationPlugin', () => {
   let sourceCode: string
@@ -32,7 +32,7 @@ describe('consoleCallLocationPlugin', () => {
         sourceType: 'unambiguous',
         plugins: ['jsx'],
       },
-      plugins: [[consoleCallLocationPlugin, { breakLine: false } as ConsoleCallLocationPluginOptions]],
+      plugins: [[babelPluginConsoleLocation, { breakLine: false } as BabelPluginConsoleLocationOptions]],
     })
 
     expect(result?.code).toMatchInlineSnapshot(`
@@ -57,7 +57,7 @@ describe('consoleCallLocationPlugin', () => {
         sourceType: 'unambiguous',
         plugins: ['jsx'],
       },
-      plugins: [[consoleCallLocationPlugin, { breakLine: true } as ConsoleCallLocationPluginOptions]],
+      plugins: [[babelPluginConsoleLocation, { breakLine: true } as BabelPluginConsoleLocationOptions]],
     })
 
     expect(result?.code).toMatchInlineSnapshot(`

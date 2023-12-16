@@ -1,1 +1,0 @@
-export { consoleCallLocationPlugin } from './plugin'
