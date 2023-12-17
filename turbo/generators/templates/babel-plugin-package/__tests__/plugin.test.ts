@@ -5,7 +5,7 @@ import { resolve } from 'path'
 import { babelPlugin } from '@/plugin'
 
 describe('babelPlugin', async () => {
-  const sourceCode = await readFile(resolve(__dirname, 'source-code.js'), 'utf-8')
+  const sourceCode = await readFile(resolve(__dirname, 'fixtures/source-code.js'), 'utf-8')
 
   test('happy path', async () => {
     const result = await transformAsync(sourceCode, { plugins: [[babelPlugin, {}]] })
