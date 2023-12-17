@@ -2,7 +2,6 @@
   "private": true,
   "author": "Plasticine-Yang",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "dev": "turbo dev --filter=./packages/*",
     "build": "turbo build --filter=./packages/*",
@@ -23,6 +22,7 @@
     "@commitlint/cli": "^18.4.2",
     "@commitlint/config-conventional": "^18.4.2",
     "@plasticine-yang/eslint-config-typescript": "^0.1.8",
+    "@turbo/gen": "^1.11.2",
     "@types/node": "^20.9.1",
     "commitizen": "^4.3.0",
     "cz-git": "^1.7.1",

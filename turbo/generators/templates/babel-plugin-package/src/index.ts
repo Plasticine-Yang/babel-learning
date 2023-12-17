@@ -1,0 +1,1 @@
+export { babelPlugin } from './plugin'
