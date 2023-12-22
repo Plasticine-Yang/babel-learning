@@ -135,10 +135,16 @@ importers:
       '@babel/core':
         specifier: ^7.23.5
         version: 7.23.5
+      '@babel/helper-module-imports':
+        specifier: ^7.22.15
+        version: 7.22.15
     devDependencies:
       '@types/babel__core':
         specifier: ^7.20.5
         version: 7.20.5
+      '@types/babel__helper-module-imports':
+        specifier: ^7.18.3
+        version: 7.18.3
 
 packages:
 
@@ -1838,6 +1844,13 @@ packages:
     resolution: {integrity: sha512-6Sfsq+EaaLrw4RmdFWE9Onp63TOUue71AWb4Gpa6JxzgTYtimbM086WnYTy2U67AofR++QKCo08ZP6pwx8YFHQ==}
     dependencies:
       '@babel/types': 7.23.5
+    dev: true
+
+  /@types/babel__helper-module-imports@7.18.3:
+    resolution: {integrity: sha512-2pyr9Vlriessj2KI85SEF7qma8vA3vzquQMw3wn6kL5lsfjH/YxJ1Noytk4/FJElpYybUbyaC37CVfEgfyme9A==}
+    dependencies:
+      '@types/babel__core': 7.20.5
+      '@types/babel__traverse': 7.20.4
     dev: true
 
   /@types/babel__template@7.4.4:

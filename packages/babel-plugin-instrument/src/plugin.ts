@@ -1,17 +1,21 @@
-import type * as BabelNamespace from '@babel/core'
+import type { PluginObj } from '@babel/core'
 
-type Babel = typeof BabelNamespace
+import { resolveOptions } from './helpers'
+import { addInstrumentModuleImport } from './logics'
+import { Babel, BabelPluginInstrumentOptions, BabelPluginInstrumentState } from './types'
 
-export interface BabelPluginInstrumentOptions {
-  /** 插桩模块的路径 - 可以是一个 npm 包 or 一个路径 */
-  instrumentModulePath: string
-}
-
-export function babelPluginInstrument(babel: Babel, options: BabelPluginInstrumentOptions): BabelNamespace.PluginObj {
-  const { instrumentModulePath } = options
+export function babelPluginInstrument(babel: Babel, options: BabelPluginInstrumentOptions): PluginObj {
+  const resolvedOptions = resolveOptions(options)
 
   return {
     name: '@babel-learning/babel-plugin-instrument',
-    visitor: {},
+    visitor: {
+      Program: {
+        enter(path, state) {
+          const typedState: BabelPluginInstrumentState = state
+          addInstrumentModuleImport(babel, path, typedState, resolvedOptions)
+        },
+      },
+    },
   }
 }
