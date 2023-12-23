@@ -64,13 +64,20 @@ importers:
         version: 0.34.6
 
   apps/playground:
+    dependencies:
+      '@babel-learning/babel-plugin-instrument':
+        specifier: workspace:*
+        version: link:../../packages/babel-plugin-instrument
+      '@babel/core':
+        specifier: ^7.23.5
+        version: 7.23.5
     devDependencies:
+      '@types/babel__core':
+        specifier: ^7.20.5
+        version: 7.20.5
       typescript:
         specifier: ^5.0.2
         version: 5.1.6
-      vite:
-        specifier: ^4.4.5
-        version: 4.4.5(@types/node@20.9.1)
 
   demos/try-babel-api:
     dependencies:
@@ -7076,42 +7083,6 @@ packages:
       - sugarss
       - supports-color
       - terser
-    dev: true
-
-  /vite@4.4.5(@types/node@20.9.1):
-    resolution: {integrity: sha512-4m5kEtAWHYr0O1Fu7rZp64CfO1PsRGZlD3TAB32UmQlpd7qg15VF7ROqGN5CyqN7HFuwr7ICNM2+fDWRqFEKaA==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      '@types/node': 20.9.1
-      esbuild: 0.18.17
-      postcss: 8.4.29
-      rollup: 3.29.1
-    optionalDependencies:
-      fsevents: 2.3.3
     dev: true
 
   /vite@4.4.9(@types/node@20.9.1):

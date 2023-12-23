@@ -3,12 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "start:babel-plugin-instrument": "tsx src/babel-plugin-instrument/transform.ts"
   },
   "devDependencies": {
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "@types/babel__core": "^7.20.5",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "@babel-learning/babel-plugin-instrument": "workspace:*",
+    "@babel/core": "^7.23.5"
   }
 }

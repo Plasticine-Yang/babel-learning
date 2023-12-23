@@ -7,3 +7,7 @@ dist
 
 **/fixtures
 turbo/generators/templates/**
+
+# playground test code
+apps/playground/src/babel-plugin-instrument/source-code.js
+apps/playground/src/babel-plugin-instrument/transformed-code.js
