@@ -1,14 +1,14 @@
-import instrument from 'instrument'
-import { foo } from 'instrument'
-import * as bar from 'instrument'
-
 function a() {
   console.log('aaa')
 }
 
 class B {
-  bb() {
-    return 'bbb'
+  bb1() {
+    return 'bb1'
+  }
+
+  bb2() {
+    return 'bb2'
   }
 }
 
